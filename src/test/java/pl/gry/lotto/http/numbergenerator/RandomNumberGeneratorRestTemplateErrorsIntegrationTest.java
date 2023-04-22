@@ -45,7 +45,6 @@ public class RandomNumberGeneratorRestTemplateErrorsIntegrationTest {
         assertThat(throwable.getMessage()).isEqualTo("500 INTERNAL_SERVER_ERROR");
     }
 
-
     @Test
     void should_throw_exception_500_when_fault_empty_response() {
         // given

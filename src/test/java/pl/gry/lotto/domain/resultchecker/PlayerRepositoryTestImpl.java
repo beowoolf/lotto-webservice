@@ -32,7 +32,6 @@ public class PlayerRepositoryTestImpl implements PlayerRepository {
         return list;
     }
 
-
     @Override
     public List<Player> findAll() {
         return new ArrayList<>(playersList.values());

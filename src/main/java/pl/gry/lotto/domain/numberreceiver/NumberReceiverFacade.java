@@ -20,7 +20,6 @@ public class NumberReceiverFacade {
     private final HashGenerable hashGenerator;
     private final TicketRepository ticketRepository;
 
-
     public NumberReceiverResponseDto inputNumbers(Set<Integer> numbersFromUser) {
         List<ValidationResult> validationResultList = numberValidator.validate(numbersFromUser);
         if (!validationResultList.isEmpty()) {
@@ -72,7 +71,6 @@ public class NumberReceiverFacade {
     public LocalDateTime retrieveNextDrawDate() {
         return drawDateGenerator.getNextDrawDate();
     }
-
 
     public TicketDto findByHash(String hash) {
         Ticket ticket = ticketRepository.findByHash(hash);

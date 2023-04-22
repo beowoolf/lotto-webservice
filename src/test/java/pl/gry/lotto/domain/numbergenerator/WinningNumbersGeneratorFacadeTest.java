@@ -46,7 +46,6 @@ public class WinningNumbersGeneratorFacadeTest {
         Set<Integer> winningNumbers = generatedNumbers.getWinningNumbers();
         boolean numbersInRange = winningNumbers.stream().allMatch(number -> number >= lowerBand && number <= upperBand);
         assertThat(numbersInRange).isTrue();
-
     }
 
     @Test
@@ -130,7 +129,6 @@ public class WinningNumbersGeneratorFacadeTest {
         boolean areWinningNumbersGeneratedByDate = numbersGenerator.areWinningNumbersGeneratedByDate();
         //then
         assertTrue(areWinningNumbersGeneratedByDate);
-
     }
 
 }

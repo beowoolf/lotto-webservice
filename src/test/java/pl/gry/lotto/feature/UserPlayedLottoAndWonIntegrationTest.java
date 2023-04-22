@@ -48,6 +48,8 @@ public class UserPlayedLottoAndWonIntegrationTest extends BaseIntegrationTest {
                                 [1, 2, 3, 4, 5, 6, 82, 82, 83, 83, 86, 57, 10, 81, 53, 93, 50, 54, 31, 88, 15, 43, 79, 32, 43]
                                           """.trim()
                         )));
+
+
         //step 2: system fetched winning numbers for draw date: 19.11.2022 12:00
         // given
         LocalDateTime drawDate = LocalDateTime.of(2022, 11, 19, 12, 0, 0);

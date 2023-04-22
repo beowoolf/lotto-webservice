@@ -78,7 +78,6 @@ class ResultCheckerFacadeTest {
         assertThat(results).contains(resultDto, resultDto1, resultDto2);
         String message = playersDto.message();
         assertThat(message).isEqualTo("Winners succeeded to retrieve");
-
     }
 
     @Test
@@ -93,7 +92,6 @@ class ResultCheckerFacadeTest {
         //then
         String message = playersDto.message();
         assertThat(message).isEqualTo("Winners failed to retrieve");
-
     }
 
     @Test
@@ -108,7 +106,6 @@ class ResultCheckerFacadeTest {
         //then
         String message = playersDto.message();
         assertThat(message).isEqualTo("Winners failed to retrieve");
-
     }
 
     @Test

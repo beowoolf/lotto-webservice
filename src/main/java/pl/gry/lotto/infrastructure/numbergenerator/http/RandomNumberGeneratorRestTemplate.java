@@ -76,7 +76,6 @@ public class RandomNumberGeneratorRestTemplate implements RandomNumberGenerable 
                 .collect(Collectors.toSet());
     }
 
-
     private String getUrlForService(String service) {
         return uri + ":" + port + service;
     }

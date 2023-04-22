@@ -31,7 +31,6 @@ public class ResponseRepositoryTestImpl implements ResponseRepository {
         return responseList.containsKey(hash);
     }
 
-
     @Override
     public <S extends ResultResponse> List<S> saveAll(Iterable<S> entities) {
         return null;
