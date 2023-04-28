@@ -140,7 +140,6 @@ public class UserPlayedLottoAndWonIntegrationTest extends BaseIntegrationTest {
                 () -> assertThat(finalResult.message()).isEqualTo("Congratulations, you won!"),
                 () -> assertThat(finalResult.responseDto().hash()).isEqualTo(ticketId),
                 () -> assertThat(finalResult.responseDto().hitNumbers()).hasSize(6));
-
     }
 
 }
