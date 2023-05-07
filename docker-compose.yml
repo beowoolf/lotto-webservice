@@ -32,6 +32,8 @@ services:
     restart: always
     ports:
       - 8000:8000
+    depends_on:
+      - mongo
     environment:
       MONGO_USER: lottoWebUser
       MONGO_PASSWORD: lottoWebPassword

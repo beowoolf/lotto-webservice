@@ -30,9 +30,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 public class UserPlayedLottoAndWonIntegrationTest extends BaseIntegrationTest {
 
+    public static final String RESULTS_ENDPOINT = "/results/";
     @Autowired
     public WinningNumbersGeneratorFacade winningNumbersGeneratorFacade;
-
     @Autowired
     public ResultCheckerFacade resultCheckerFacade;
 
@@ -93,7 +93,7 @@ public class UserPlayedLottoAndWonIntegrationTest extends BaseIntegrationTest {
         //step 4: user made GET /results/notExistingId and system returned 404(NOT_FOUND) and body with (message: Not found for id: notExistingId and status NOT_FOUND)
         // given
         // when
-        ResultActions performGetResultsWithNotExistingId = mockMvc.perform(get("/results/notExistingId"));
+        ResultActions performGetResultsWithNotExistingId = mockMvc.perform(get(RESULTS_ENDPOINT + "notExistingId"));
         // then
         performGetResultsWithNotExistingId.andExpect(status().isNotFound())
                 .andExpect(content().json("""
@@ -130,7 +130,7 @@ public class UserPlayedLottoAndWonIntegrationTest extends BaseIntegrationTest {
 
         //step 8: ser made GET /results/sampleTicketId and system returned 200 (OK)
         // given && when
-        ResultActions performGetMethod = mockMvc.perform(get("/results/" + ticketId));
+        ResultActions performGetMethod = mockMvc.perform(get(RESULTS_ENDPOINT + ticketId));
 
         // then
         MvcResult mvcResultGetMethod = performGetMethod.andExpect(status().isOk()).andReturn();

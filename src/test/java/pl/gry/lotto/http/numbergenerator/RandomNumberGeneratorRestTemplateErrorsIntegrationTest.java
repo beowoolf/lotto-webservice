@@ -17,6 +17,7 @@ public class RandomNumberGeneratorRestTemplateErrorsIntegrationTest {
 
     public static final String CONTENT_TYPE_HEADER_KEY = "Content-Type";
     public static final String APPLICATION_JSON_CONTENT_TYPE_VALUE = "application/json";
+    public static final String REMOTE_ENDPOINT = "/api/v1.0/random?min=1&max=99&count=25";
 
     @RegisterExtension
     public static WireMockExtension wireMockServer = WireMockExtension.newInstance()
@@ -31,7 +32,7 @@ public class RandomNumberGeneratorRestTemplateErrorsIntegrationTest {
     @Test
     void should_throw_exception_500_when_fault_connection_reset_by_peer() {
         // given
-        wireMockServer.stubFor(WireMock.get("/api/v1.0/random?min=1&max=99&count=25")
+        wireMockServer.stubFor(WireMock.get(REMOTE_ENDPOINT)
                 .willReturn(WireMock.aResponse()
                         .withStatus(HttpStatus.SC_OK)
                         .withHeader(CONTENT_TYPE_HEADER_KEY, APPLICATION_JSON_CONTENT_TYPE_VALUE)
@@ -48,7 +49,7 @@ public class RandomNumberGeneratorRestTemplateErrorsIntegrationTest {
     @Test
     void should_throw_exception_500_when_fault_empty_response() {
         // given
-        wireMockServer.stubFor(WireMock.get("/api/v1.0/random?min=1&max=99&count=25")
+        wireMockServer.stubFor(WireMock.get(REMOTE_ENDPOINT)
                 .willReturn(WireMock.aResponse()
                         .withStatus(HttpStatus.SC_OK)
                         .withHeader(CONTENT_TYPE_HEADER_KEY, APPLICATION_JSON_CONTENT_TYPE_VALUE)
@@ -65,7 +66,7 @@ public class RandomNumberGeneratorRestTemplateErrorsIntegrationTest {
     @Test
     void should_throw_exception_500_when_fault_malformed_response_chunk() {
         // given
-        wireMockServer.stubFor(WireMock.get("/api/v1.0/random?min=1&max=99&count=25")
+        wireMockServer.stubFor(WireMock.get(REMOTE_ENDPOINT)
                 .willReturn(WireMock.aResponse()
                         .withStatus(HttpStatus.SC_OK)
                         .withHeader(CONTENT_TYPE_HEADER_KEY, APPLICATION_JSON_CONTENT_TYPE_VALUE)
@@ -81,7 +82,7 @@ public class RandomNumberGeneratorRestTemplateErrorsIntegrationTest {
     @Test
     void should_throw_exception_500_when_fault_random_data_then_close() {
         // given
-        wireMockServer.stubFor(WireMock.get("/api/v1.0/random?min=1&max=99&count=25")
+        wireMockServer.stubFor(WireMock.get(REMOTE_ENDPOINT)
                 .willReturn(WireMock.aResponse()
                         .withStatus(HttpStatus.SC_OK)
                         .withHeader(CONTENT_TYPE_HEADER_KEY, APPLICATION_JSON_CONTENT_TYPE_VALUE)
@@ -98,7 +99,7 @@ public class RandomNumberGeneratorRestTemplateErrorsIntegrationTest {
     @Test
     void should_throw_exception_204_when_status_is_204_no_content() {
         // given
-        wireMockServer.stubFor(WireMock.get("/api/v1.0/random?min=1&max=99&count=25")
+        wireMockServer.stubFor(WireMock.get(REMOTE_ENDPOINT)
                 .willReturn(WireMock.aResponse()
                         .withStatus(HttpStatus.SC_NO_CONTENT)
                         .withHeader(CONTENT_TYPE_HEADER_KEY, APPLICATION_JSON_CONTENT_TYPE_VALUE)
@@ -118,7 +119,7 @@ public class RandomNumberGeneratorRestTemplateErrorsIntegrationTest {
     @Test
     void should_throw_exception_500_when_response_delay_is_5000_ms_and_client_has_1000ms_read_timeout() {
         // given
-        wireMockServer.stubFor(WireMock.get("/api/v1.0/random?min=1&max=99&count=25")
+        wireMockServer.stubFor(WireMock.get(REMOTE_ENDPOINT)
                 .willReturn(WireMock.aResponse()
                         .withStatus(HttpStatus.SC_OK)
                         .withHeader(CONTENT_TYPE_HEADER_KEY, APPLICATION_JSON_CONTENT_TYPE_VALUE)
@@ -139,7 +140,7 @@ public class RandomNumberGeneratorRestTemplateErrorsIntegrationTest {
     @Test
     void should_throw_exception_404_when_http_service_returning_not_found_status() {
         // given
-        wireMockServer.stubFor(WireMock.get("/api/v1.0/random?min=1&max=99&count=25")
+        wireMockServer.stubFor(WireMock.get(REMOTE_ENDPOINT)
                 .willReturn(WireMock.aResponse()
                         .withHeader(CONTENT_TYPE_HEADER_KEY, APPLICATION_JSON_CONTENT_TYPE_VALUE)
                         .withStatus(HttpStatus.SC_NOT_FOUND))
@@ -156,7 +157,7 @@ public class RandomNumberGeneratorRestTemplateErrorsIntegrationTest {
     @Test
     void should_throw_exception_401_when_http_service_returning_unauthorized_status() {
         // given
-        wireMockServer.stubFor(WireMock.get("/api/v1.0/random?min=1&max=99&count=25")
+        wireMockServer.stubFor(WireMock.get(REMOTE_ENDPOINT)
                 .willReturn(WireMock.aResponse()
                         .withHeader(CONTENT_TYPE_HEADER_KEY, APPLICATION_JSON_CONTENT_TYPE_VALUE)
                         .withStatus(HttpStatus.SC_UNAUTHORIZED))
