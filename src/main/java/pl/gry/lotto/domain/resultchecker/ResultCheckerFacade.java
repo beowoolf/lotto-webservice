@@ -1,6 +1,6 @@
 package pl.gry.lotto.domain.resultchecker;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import pl.gry.lotto.domain.numbergenerator.WinningNumbersGeneratorFacade;
 import pl.gry.lotto.domain.numbergenerator.dto.WinningNumbersDto;
 import pl.gry.lotto.domain.numberreceiver.NumberReceiverFacade;
@@ -13,13 +13,13 @@ import java.util.Set;
 
 import static pl.gry.lotto.domain.resultchecker.ResultCheckerMapper.mapPlayersToResults;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ResultCheckerFacade {
 
-    WinningNumbersGeneratorFacade winningNumbersGeneratorFacade;
-    NumberReceiverFacade numberReceiverFacade;
-    PlayerRepository playerRepository;
-    WinnersRetriever winnerGenerator;
+    private final WinningNumbersGeneratorFacade winningNumbersGeneratorFacade;
+    private final NumberReceiverFacade numberReceiverFacade;
+    private final PlayerRepository playerRepository;
+    private final WinnersRetriever winnerGenerator;
 
     public PlayersDto generateResults() {
         List<TicketDto> allTicketsByDate = numberReceiverFacade.retrieveAllTicketsByNextDrawDate();

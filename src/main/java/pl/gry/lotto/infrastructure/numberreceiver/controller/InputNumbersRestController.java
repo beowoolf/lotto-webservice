@@ -1,6 +1,6 @@
 package pl.gry.lotto.infrastructure.numberreceiver.controller;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,9 +13,9 @@ import javax.validation.Valid;
 import java.util.HashSet;
 import java.util.Set;
 
-@RestController
 @Log4j2
-@AllArgsConstructor
+@RestController
+@RequiredArgsConstructor
 public class InputNumbersRestController {
 
     private final NumberReceiverFacade numberReceiverFacade;

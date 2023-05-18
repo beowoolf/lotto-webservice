@@ -1,6 +1,6 @@
 package pl.gry.lotto.domain.resultannouncer;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import pl.gry.lotto.domain.resultannouncer.dto.ResponseDto;
 import pl.gry.lotto.domain.resultannouncer.dto.ResultAnnouncerResponseDto;
 import pl.gry.lotto.domain.resultchecker.ResultCheckerFacade;
@@ -12,7 +12,7 @@ import java.util.Optional;
 
 import static pl.gry.lotto.domain.resultannouncer.MessageResponse.*;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ResultAnnouncerFacade {
 
     private final ResultCheckerFacade resultCheckerFacade;

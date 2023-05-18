@@ -1,6 +1,6 @@
 package pl.gry.lotto.infrastructure.numbergenerator.http;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
@@ -16,8 +16,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-@AllArgsConstructor
 @Log4j2
+@RequiredArgsConstructor
 public class RandomNumberGeneratorRestTemplate implements RandomNumberGenerable {
 
     public static final int MAXIMAL_WINNING_NUMBERS = 6;

@@ -1,12 +1,9 @@
 package pl.gry.lotto.domain.resultchecker;
 
-import lombok.AllArgsConstructor;
-
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-@AllArgsConstructor
 class WinnersRetriever {
     private final static int NUMBERS_WHEN_PLAYER_WON = 3;
 

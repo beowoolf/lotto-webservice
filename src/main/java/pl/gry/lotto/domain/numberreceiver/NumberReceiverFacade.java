@@ -1,6 +1,6 @@
 package pl.gry.lotto.domain.numberreceiver;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import pl.gry.lotto.domain.numberreceiver.dto.NumberReceiverResponseDto;
 import pl.gry.lotto.domain.numberreceiver.dto.TicketDto;
 
@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 
 import static pl.gry.lotto.domain.numberreceiver.ValidationResult.INPUT_SUCCESS;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class NumberReceiverFacade {
 
     private final NumberValidator numberValidator;

@@ -1,13 +1,13 @@
 package pl.gry.lotto.domain.numbergenerator;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import pl.gry.lotto.domain.numbergenerator.dto.WinningNumbersDto;
 import pl.gry.lotto.domain.numberreceiver.NumberReceiverFacade;
 
 import java.time.LocalDateTime;
 import java.util.Set;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class WinningNumbersGeneratorFacade {
 
     private final RandomNumberGenerable randomGenerable;
