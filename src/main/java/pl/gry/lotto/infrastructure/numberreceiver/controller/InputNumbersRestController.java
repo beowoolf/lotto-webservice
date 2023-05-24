@@ -22,7 +22,9 @@ public class InputNumbersRestController {
 
     @PostMapping("/inputNumbers")
     public ResponseEntity<NumberReceiverResponseDto> inputNumbers(@RequestBody @Valid InputNumbersRequestDto requestDto) {
+        log.info("Numbers from player: " + requestDto.inputNumbers());
         Set<Integer> distinctNumbers = new HashSet<>(requestDto.inputNumbers());
+        log.info("Distincted numbers from player: " + distinctNumbers);
         NumberReceiverResponseDto numberReceiverResponseDto = numberReceiverFacade.inputNumbers(distinctNumbers);
         return ResponseEntity.ok(numberReceiverResponseDto);
     }
