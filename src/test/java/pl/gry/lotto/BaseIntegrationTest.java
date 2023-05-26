@@ -18,10 +18,10 @@ import pl.gry.lotto.domain.AdjustableClock;
 
 import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.wireMockConfig;
 
-@SpringBootTest(classes = {LottoApplication.class, IntegrationConfiguration.class})
-@ActiveProfiles("integration")
-@AutoConfigureMockMvc
 @Testcontainers
+@AutoConfigureMockMvc
+@ActiveProfiles("integration")
+@SpringBootTest(classes = {LottoApplication.class, IntegrationConfiguration.class})
 public class BaseIntegrationTest {
 
     public static final String WIRE_MOCK_HOST = "http://localhost";

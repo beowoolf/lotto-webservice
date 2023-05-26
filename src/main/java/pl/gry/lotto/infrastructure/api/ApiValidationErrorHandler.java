@@ -14,9 +14,9 @@ import java.util.stream.Collectors;
 @ControllerAdvice
 public class ApiValidationErrorHandler {
 
+    @ResponseBody
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    @ResponseBody
     public ApiValidationErrorDto handleValidationExceptions(MethodArgumentNotValidException exception) {
         final List<String> errors = getErrorsFromException(exception);
         return new ApiValidationErrorDto(errors, HttpStatus.BAD_REQUEST);

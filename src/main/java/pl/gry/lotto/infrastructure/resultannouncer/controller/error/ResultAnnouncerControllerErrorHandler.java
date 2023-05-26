@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import pl.gry.lotto.domain.resultchecker.PlayerResultNotFoundException;
 
-@ControllerAdvice
 @Log4j2
+@ControllerAdvice
 public class ResultAnnouncerControllerErrorHandler {
 
-    @ExceptionHandler(PlayerResultNotFoundException.class)
     @ResponseBody
     @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ExceptionHandler(PlayerResultNotFoundException.class)
     public ResultAnnouncerErrorResponse handlePlayerResultNotFound(PlayerResultNotFoundException exception) {
         String message = exception.getMessage();
         log.error(message);

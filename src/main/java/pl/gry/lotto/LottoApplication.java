@@ -7,10 +7,10 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 import org.springframework.scheduling.annotation.EnableScheduling;
 import pl.gry.lotto.domain.numbergenerator.WinningNumbersGeneratorFacadeConfigurationProperties;
 
-@SpringBootApplication
-@EnableConfigurationProperties({WinningNumbersGeneratorFacadeConfigurationProperties.class})
 @EnableScheduling
+@SpringBootApplication
 @EnableMongoRepositories
+@EnableConfigurationProperties({WinningNumbersGeneratorFacadeConfigurationProperties.class})
 public class LottoApplication {
 
     public static void main(String[] args) {
