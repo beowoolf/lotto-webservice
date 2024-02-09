@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 public class RandomNumberGeneratorRestTemplate implements RandomNumberGenerable {
 
     public static final int MAXIMAL_WINNING_NUMBERS = 6;
-    public static final String RANDOM_NUMBER_SERVICE_PATH = "/api/v1.0/random";
+    public static final String RANDOM_NUMBER_SERVICE_PATH = "/random/";
 
     private final RestTemplate restTemplate;
     private final String uri;
