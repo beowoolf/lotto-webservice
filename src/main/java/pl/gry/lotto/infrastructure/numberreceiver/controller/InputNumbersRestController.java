@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import pl.gry.lotto.domain.numberreceiver.NumberReceiverFacade;
 import pl.gry.lotto.domain.numberreceiver.dto.NumberReceiverResponseDto;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 import java.util.HashSet;
 import java.util.Set;
 

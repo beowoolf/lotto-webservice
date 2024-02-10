@@ -42,7 +42,7 @@ public class RandomNumberGeneratorRestTemplate implements RandomNumberGenerable 
             return SixRandomNumbersDto.builder()
                     .numbers(sixDistinctNumbers)
                     .build();
-        } catch (ResourceAccessException e) {
+        } catch (ResourceAccessException | IllegalArgumentException e) {
             log.error("Error while fetching winning numbers using http client: " + e.getMessage());
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR);
         }

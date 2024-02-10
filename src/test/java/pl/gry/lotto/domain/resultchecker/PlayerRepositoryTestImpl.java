@@ -38,7 +38,7 @@ public class PlayerRepositoryTestImpl implements PlayerRepository {
     }
 
     @Override
-    public Iterable<Player> findAllById(Iterable<String> strings) {
+    public List<Player> findAllById(Iterable<String> strings) {
         return null;
     }
 

@@ -1,7 +1,7 @@
 package pl.gry.lotto.infrastructure.numberreceiver.controller;
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import java.util.List;
 
 public record InputNumbersRequestDto(

@@ -49,7 +49,7 @@ public class UserPlayedLottoAndWonIntegrationTest extends BaseIntegrationTest {
     public void should_user_win_and_system_should_generate_winners() throws Exception {
         // step 1: external service returns 6 random numbers (1,2,3,4,5,6)
         // given
-        wireMockServer.stubFor(WireMock.get("/api/v1.0/random?min=1&max=99&count=25")
+        wireMockServer.stubFor(WireMock.get("/random/?min=1&max=99&count=25")
                 .willReturn(WireMock.aResponse()
                         .withStatus(HttpStatus.OK.value())
                         .withHeader("Content-Type", "application/json")

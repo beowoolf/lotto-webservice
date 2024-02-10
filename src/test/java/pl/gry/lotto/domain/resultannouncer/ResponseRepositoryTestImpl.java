@@ -42,7 +42,7 @@ public class ResponseRepositoryTestImpl implements ResponseRepository {
     }
 
     @Override
-    public Iterable<ResultResponse> findAllById(Iterable<String> strings) {
+    public List<ResultResponse> findAllById(Iterable<String> strings) {
         return null;
     }
 

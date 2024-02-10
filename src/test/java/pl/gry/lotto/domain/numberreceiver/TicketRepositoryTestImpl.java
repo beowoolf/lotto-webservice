@@ -59,7 +59,7 @@ public class TicketRepositoryTestImpl implements TicketRepository {
     }
 
     @Override
-    public Iterable<Ticket> findAllById(Iterable<String> strings) {
+    public List<Ticket> findAllById(Iterable<String> strings) {
         return null;
     }
 
