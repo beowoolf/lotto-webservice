@@ -20,7 +20,6 @@
         <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <assertj-core.version>3.23.1</assertj-core.version>
-        <junit-jupiter-engine.version>5.9.1</junit-jupiter-engine.version>
         <lombok.version>1.18.34</lombok.version>
         <mockito-core.version>4.9.0</mockito-core.version>
         <testcontainers.version>1.18.3</testcontainers.version>
