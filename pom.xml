@@ -28,7 +28,7 @@
         <springdoc-openapi-ui.version>1.7.0</springdoc-openapi-ui.version>
     </properties>
     <dependencies>
-        <!--        SPRING BOOT-->
+        <!--  SPRING BOOT -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
