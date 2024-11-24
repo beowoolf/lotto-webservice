@@ -105,7 +105,7 @@ public class RandomNumberGeneratorRestTemplateErrorsIntegrationTest {
                         .withHeader(CONTENT_TYPE_HEADER_KEY, APPLICATION_JSON_CONTENT_TYPE_VALUE)
                         .withBody("""
                                 [1, 2, 3, 4, 5, 6, 82, 82, 83, 83, 86, 57, 10, 81, 53, 93, 50, 54, 31, 88, 15, 43, 79, 32, 43]
-                                          """.trim()
+                                """.trim()
                         )));
 
         // when
@@ -125,7 +125,7 @@ public class RandomNumberGeneratorRestTemplateErrorsIntegrationTest {
                         .withHeader(CONTENT_TYPE_HEADER_KEY, APPLICATION_JSON_CONTENT_TYPE_VALUE)
                         .withBody("""
                                 [1, 2, 3, 4, 5, 6, 82, 82, 83, 83, 86, 57, 10, 81, 53, 93, 50, 54, 31, 88, 15, 43, 79, 32, 43]
-                                          """.trim()
+                                """.trim()
                         )
                         .withFixedDelay(5000)));
 

@@ -5,8 +5,6 @@ import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 import pl.gry.lotto.integration.BaseIntegrationTest;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class LottoApplicationTests extends BaseIntegrationTest {
 
     @DynamicPropertySource
