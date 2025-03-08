@@ -27,7 +27,7 @@ public class BaseIntegrationTest {
 
     public static final String WIRE_MOCK_HOST = "http://localhost";
     @Container
-    public static final MongoDBContainer mongoDBContainer = new MongoDBContainer(DockerImageName.parse("mongo:4.0.10"));
+    public static final MongoDBContainer DATABASE_CONTAINER = new MongoDBContainer(DockerImageName.parse("mongo:4.0.10"));
     @RegisterExtension
     public static WireMockExtension wireMockServer = WireMockExtension.newInstance()
             .options(wireMockConfig().dynamicPort())
@@ -41,7 +41,7 @@ public class BaseIntegrationTest {
 
     @DynamicPropertySource
     public static void propertyOverride(DynamicPropertyRegistry registry) {
-        registry.add("spring.data.mongodb.uri", mongoDBContainer::getReplicaSetUrl);
+        registry.add("spring.data.mongodb.uri", DATABASE_CONTAINER::getReplicaSetUrl);
         registry.add("lotto.number-generator.http.client.config.port", () -> wireMockServer.getPort());
         registry.add("lotto.number-generator.http.client.config.uri", () -> WIRE_MOCK_HOST);
     }
